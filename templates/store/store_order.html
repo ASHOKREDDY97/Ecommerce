@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ 
+{% if orders %}
+
+
+{% for order in orders %}
+{{ order.first_name }} ,
+{{ order.last_name }},
+{{ order.phone }},
+{{ order.email }},
+{{ order.address_line_1 }},
+{{ order.address_line_2 }},
+{{ order.country }},
+{{ order.state }},
+{{ order.city }},
+{{ order.order_note }}
+{% endfor %}
+{% else %}
+<p>You have no orders yet.</p>
+{% endif %}
+{% endblock %}
+    
+ <!-- <select id="program" name="program" class="program-dropdown" style="width:400px;"> 
+                     {% for program in list_program %}
+                       <option value="{{ program.id }}">{{ program.name }}</option> 
+                     {% endfor %} 
+                </select> -->
